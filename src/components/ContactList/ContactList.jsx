@@ -1,5 +1,6 @@
 import { Contact } from 'components/Contact/Contact.jsx';
 import { List } from './ContactList.styled';
+import PropTypes from 'prop-types';
 const listToRender = (filter, contacts) => {
   if (!filter) {
     return contacts;
@@ -27,4 +28,10 @@ export const ContactList = ({ contacts, filter, onDeleteContact }) => {
       </List>
     </>
   );
+};
+
+ContactList.propTypes = {
+  contacts: PropTypes.any.isRequired,
+  filter: PropTypes.string,
+  onDeleteContact: PropTypes.func,
 };
